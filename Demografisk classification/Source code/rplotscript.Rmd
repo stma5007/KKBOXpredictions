@@ -1,0 +1,31 @@
+---
+title: "Visualisations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+library(readxl)
+readability_time <- read_excel("Desktop/readability_time.xls")
+
+
+pdf("rplot.pdf") 
+plot(readability_time, ylab = "KF Score", xlab = "Presidential number", pch = 1, cex= 1.5)
+the_model <- lm(readability_time$Index ~ readability_time$Time)
+abline(the_model, col = "grey", lwd = 3)
+
+
+
+```
+
+
